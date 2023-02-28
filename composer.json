@@ -7,7 +7,8 @@
 		"classmap": [
 			"class-provider.php",
             "class-factory.php",
-            "enum-provider-types.php"
+            "enum-provider-types.php",
+            "providers/*/class-*.php"
 		]
 	},
     "config": {
