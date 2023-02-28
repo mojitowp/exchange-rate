@@ -1,5 +1,8 @@
 # Mojito Exchange Rate
 
+Paquete de consulta de tipo de cambio, por ahora funciona para el Ministerio de Hacienda y el Banco Central de Costa Rica pero es extendible.
+
+
 ## Instalación
 ```
 composer require mojitowp/exchange-rate
