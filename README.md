@@ -67,6 +67,7 @@ Dólar compra: 564.27
 ### Tipo de cambio del Banco Central de Costa Rica
 
 Para poder obtener tipos de cambio usando el web service del Banco Central de Costa Rica primero deberá registrarse, puede encontrar ayuda en [Esta Guía](https://gee.bccr.fi.cr/indicadoreseconomicos/Documentos/DocumentosMetodologiasNotasTecnicas/Webservices_de_indicadores_economicos.pdf)
+
 ```
 $rates = Factory::create( ProviderTypes::CR_BCCR );
 $rates->setParams( array( 
@@ -82,6 +83,8 @@ $data = $rates->getRates();
 
 echo print_r( $data, true );
 ```
+
+Por ahora el resultado es el XML de indicadores económicos, pero se está trabajando en mejorarlo.
 
 
 # Pull Request are Welcome | Los Pull Request son bienvenidos
