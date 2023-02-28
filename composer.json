@@ -5,8 +5,9 @@
 	"license": "MIT",
     "autoload" : {
 		"classmap": [
-			"class-providers.php",
-            "class-factory.php"
+			"class-provider.php",
+            "class-factory.php",
+            "enum-provider-types.php"
 		]
 	},
     "config": {
