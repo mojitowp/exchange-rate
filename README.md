@@ -84,7 +84,43 @@ $data = $rates->getRates();
 echo print_r( $data, true );
 ```
 
-Por ahora el resultado es el XML de indicadores económicos, pero se está trabajando en mejorarlo.
+
+Esto imprime el siguiente objecto:
+
+```
+stdClass Object
+(
+    [dolar] => stdClass Object
+        (
+            [venta] => stdClass Object
+                (
+                    [valor] => 558.05000000
+                    [fecha] => 2023-02-27T00:00:00-06:00
+                )
+
+            [compra] => stdClass Object
+                (
+                    [valor] => 556.40000000
+                    [fecha] => 2023-02-28T00:00:00-06:00
+                )
+
+        )
+
+)
+
+Acceder a los valores:
+```
+echo "Dólar venta: " . $data->dolar->venta->valor;
+echo PHP_EOL;
+echo "Dólar compra: " . $data->dolar->venta->valor;
+echo PHP_EOL;
+```
+
+El resultado sería:
+```
+Dólar venta: 558.05000000
+Dólar compra: 558.05000000
+```
 
 
 ### Pull Request are Welcome | Los Pull Request son bienvenidos
