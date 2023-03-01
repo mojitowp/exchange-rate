@@ -1,5 +1,7 @@
 <?php
 
+namespace Mojito\ExchangeRate;
+
 class Factory{
 
     static function create ( ProviderTypes $provider ) {

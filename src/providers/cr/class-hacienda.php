@@ -1,5 +1,7 @@
 <?php
 
+namespace Mojito\ExchangeRate;
+
 class Hacienda extends Provider{
 
     public function __construct(){

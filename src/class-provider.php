@@ -1,5 +1,7 @@
 <?php
 
+namespace Mojito\ExchangeRate;
+
 abstract class Provider{
 
     protected string $url;
