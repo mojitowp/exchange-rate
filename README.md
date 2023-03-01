@@ -12,6 +12,9 @@ composer require mojitowp/exchange-rate
 ### Tipo de cambio del Ministerio de Hacienda
 
 ```
+use Mojito\ExchangeRate\Factory;
+use Mojito\ExchangeRate\ProviderTypes;
+
 $rates = Factory::create( ProviderTypes::CR_Hacienda );
 $data = $rates->getRates();
 
@@ -69,6 +72,9 @@ Dólar compra: 564.27
 Para poder obtener tipos de cambio usando el web service del Banco Central de Costa Rica primero deberá registrarse, puede encontrar ayuda en [Esta Guía](https://gee.bccr.fi.cr/indicadoreseconomicos/Documentos/DocumentosMetodologiasNotasTecnicas/Webservices_de_indicadores_economicos.pdf)
 
 ```
+use Mojito\ExchangeRate\Factory;
+use Mojito\ExchangeRate\ProviderTypes;
+
 $rates = Factory::create( ProviderTypes::CR_BCCR );
 $rates->setParams( array( 
     'Indicador' => 317,

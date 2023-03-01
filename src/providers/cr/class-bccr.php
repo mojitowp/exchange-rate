@@ -1,5 +1,7 @@
 <?php
 
+namespace Mojito\ExchangeRate;
+
 class BCCR extends Provider{
 
     public function __construct(){
@@ -17,7 +19,7 @@ class BCCR extends Provider{
         }
         
         $data = file_get_contents( $this->url );
-        $xml  = new DOMDocument();
+        $xml  = new \DOMDocument();
         $xml->loadXML( $data );
 
         $dolar_venta = $xml->getElementsByTagName('INGC011_CAT_INDICADORECONOMIC')
