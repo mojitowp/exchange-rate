@@ -6,7 +6,7 @@
     "autoload" : {
 		"classmap": [
 			"src/",
-            "providers/cr/"
+            "src/providers/cr/"
 		]
 	},
     "config": {
