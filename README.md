@@ -69,6 +69,8 @@ Dólar compra: 564.27
 
 ### Tipo de cambio del Banco Central de Costa Rica
 
+Indicadores Económicos (Tipo de Cambio) BCCR.
+
 Para poder obtener tipos de cambio usando el web service del Banco Central de Costa Rica primero deberá registrarse, puede encontrar ayuda en [Esta Guía](https://gee.bccr.fi.cr/indicadoreseconomicos/Documentos/DocumentosMetodologiasNotasTecnicas/Webservices_de_indicadores_economicos.pdf)
 
 ```

@@ -1,0 +1,36 @@
+name: PHPStan Analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  phpstan:
+    name: PHPStan on PHP ${{ matrix.php-version }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: [8.2, 8.3, 8.4] # Especificamos las versiones de PHP a validar
+
+    steps:
+      # Checkout del repositorio
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Configuración de PHP con la versión actual de la matriz
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          tools: composer
+
+      # Instalación de las dependencias del proyecto
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist
+
+      # Ejecución de PHPStan para analizar el código
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse --no-progress

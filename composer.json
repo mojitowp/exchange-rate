@@ -19,5 +19,8 @@
             "type": "github",
             "url": "https://github.com/sponsors/nomanualdev"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpstan/phpstan": "^2.1"
+    }
 }
