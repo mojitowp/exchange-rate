@@ -34,3 +34,11 @@ jobs:
       # Ejecución de PHPStan para analizar el código
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse --no-progress . > phpstan.txt || true
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A .
+          git commit -m "PHPStan analysis" || true
+          git push
