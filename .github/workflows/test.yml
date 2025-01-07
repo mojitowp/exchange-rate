@@ -21,9 +21,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-
 
       # Crear una nueva rama para los tests
       - name: Create a new branch
@@ -43,18 +40,19 @@ jobs:
 
       # Ejecución de PHPStan para analizar el código
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyse --no-progress . > phpstan.txt || true
+        #run: vendor/bin/phpstan analyse --no-progress . > phpstan.txt || true
+        run: vendor/bin/phpstan analyse --no-progress .
 
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A .
-          git commit -m "PHPStan analysis" || true
+      #- name: Commit changes
+      #  run: |
+      #    git config --local user.email "action@github.com"
+      #    git config --local user.name "GitHub Action"
+      #    git add -A .
+      #    git commit -m "PHPStan analysis" || true
 
       # Hacer push de la nueva rama al repositorio
-      - name: Push branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git push origin HEAD
+      #- name: Push branch
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  run: |
+      #    git push origin HEAD
