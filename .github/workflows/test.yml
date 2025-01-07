@@ -19,6 +19,8 @@ jobs:
       # Checkout del repositorio
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # Configuración de PHP con la versión actual de la matriz
       - name: Setup PHP
