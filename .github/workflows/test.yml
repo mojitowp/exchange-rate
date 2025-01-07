@@ -22,6 +22,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # Crear una nueva rama para los tests
+      - name: Create a new branch
+        run: |
+          git checkout -b phpstan
+
       # Configuración de PHP con la versión actual de la matriz
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -43,4 +48,10 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A .
           git commit -m "PHPStan analysis" || true
-          git push
+
+      # Hacer push de la nueva rama al repositorio
+      - name: Push branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin HEAD
