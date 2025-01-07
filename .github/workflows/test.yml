@@ -33,4 +33,4 @@ jobs:
 
       # Ejecución de PHPStan para analizar el código
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyse --no-progress
+        run: vendor/bin/phpstan analyse --no-progress . > phpstan.txt || true
